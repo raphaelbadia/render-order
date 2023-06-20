@@ -1,8 +1,9 @@
 import { globalStuff } from "./globalStuff";
 
-export default function RootLayout({ children }) {
-  console.log("RootLayout is rendering");
-  globalStuff.init();
+export default async function RootLayout({ children }) {
+  console.log("RootLayout starts to render");
+  await globalStuff.init();
+  console.log("RootLayout waited 1000ms to render");
 
   return (
     <html>
